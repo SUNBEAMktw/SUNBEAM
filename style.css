@@ -38,6 +38,7 @@ ol{
 }
 #grid #article{
 
+  line-height: 200%;
   font-family: 'Nanum Gothic Coding', monospace;
   padding-left:25px;
 }
