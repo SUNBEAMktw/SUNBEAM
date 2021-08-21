@@ -56,3 +56,8 @@ ol{
     border-bottom:none;
   }
 }
+#exercise{
+  background-color: white;
+  color:black;
+  font-family: 'Nanum Gothic Coding', monospace;
+}
