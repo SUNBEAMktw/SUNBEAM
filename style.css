@@ -16,15 +16,6 @@ h1{
   margin:0;
   padding:20px;
 }
-ol{
-  background-color: white;
-  color:black;
-  font-family: 'Nanum Gothic Coding', monospace;
-  border-right:1px solid black;
-  width:100px;
-  margin:0;
-  padding:20px;
-}
 #grid{
 
   font-family: 'Nanum Gothic Coding', monospace;
@@ -56,8 +47,12 @@ ol{
     border-bottom:none;
   }
 }
-#exercise{
+#category{
   background-color: white;
   color:black;
   font-family: 'Nanum Gothic Coding', monospace;
+  border-right:1px solid black;
+  width:100px;
+  margin:0;
+  padding:20px;
 }
