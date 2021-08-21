@@ -51,6 +51,196 @@ int main(void)
       return 0;
 }
 </code></pre>
+<h3>『C 기초 플러스』</h3>
+<h3>「Chapter 1: 준비」</h3>
+
+<p>프로그래밍 연습</p>
+<p>01. 첫 번째 printf() 호출을 사용하여 성과 이름을 한 라인에 출력하고, 두 번째 printf() 호출을 사용하여 성과 이름을 두 라인에 각각 나누어 출력하고, 이어서 printf()를 두 번 호출하여 성과 이름을 한 라인에 출력하는 프로그램을 작성하라.
+<pre><code class="C">#include &lt;stdio.h&gt;
+int main(void) 
+{
+    printf("Kim Jisu\n");     
+    printf("Kim\nJisu\n");         
+    printf("Kim\n");
+    printf("Jisu\n");
+ 
+    return 0;
+}
+</code></pre>
+
+<p>02. 자신의 이름과 주소를 출력하는 프로그램을 작성하라.</p>
+<pre><code class="C">#include &lt;stdio.h&gt;
+int main (void)
+{
+    printf("Kim Taewon\n");
+    printf("JangWonBille\n");
+ 
+    return 0;
+}
+</code></pre>
+
+<p>03. 햇수로 된 자신의 나이를 날짜로 환산하고, 두 값을 모두 출력하는 프로그램을 작성하라. 이때, 개월이 모자라는 해와 윤년은 무시하라.</p>
+<pre><code class="C">#include &lt;stdio.h&gt;
+#include<stdio.h>
+int main (void)
+{
+    int cur_age = 23;
+    printf("김태원의 나이는 %d살로, %d일 살았다.\n", cur_age, cur_age * 365);
+ 
+    return 0;
+}
+</code></pre>
+
+<p>04. 다음과 같은 출력이 나오는 프로그램을 작성하라.</p>
+<pre><code class="C">For he’s a jolly good fellow!
+For he’s a jolly good fellow!
+For he’s a jolly good fellow!
+Which nobody can deny!
+</code></pre>
+<p>main()함수 외에, 2개의 사용자 정의 함수를 작성해야 한다. “jolly good” 메시지를 한 번 출력하는 jolly()라는 함수와, 마지막 라인을 출력하는 deny()라는 함수를 작성해야 한다.</p>
+<pre><code class="C">#include &lt;stdio.h&gt;
+void deny(void);
+void jolly(void);
+int main(void)
+{
+    printf("For he's a");
+    jolly();
+    printf("fellow!\n");
+    printf("For he's a");
+    jolly();
+    printf("fellow!\n");
+    printf("For he's a");
+    jolly();
+    printf("fellow!\n");
+ 
+    deny();
+ 
+    return 0;
+}
+ 
+void jolly(void)
+{
+    printf(" jolly good ");
+}
+ 
+void deny(void)
+{
+    printf("Which nobody can deny!\n");
+}
+</code></pre>
+
+<p>05. 다음과 같은 출력이 나오는 프로그램을 작성하라.</p>
+<pre><code class="C">Brazil, Russia, India, China
+India, China
+Brazil, Russia
+</code></pre>
+<p>main()함수 외에, 2개의 사용자 정의 함수를 작성해야 한다. “Brazil, Russia”를 한 번 출력하는 br()이라는 함수와, “India, China”를 한 번 출력하는 ic()라는 함수를 작성하라. 추가로 필요한 다른 것들은 main() 함수가 출력해야 한다.</p>
+<pre><code class="C">#include &lt;stdio.h&gt;
+void br(void);
+void ic(void);
+int main(void)
+{
+    br(); 
+    printf(", ");
+    ic();
+    printf("\n");
+ 
+    ic();
+    printf(",\n");
+ 
+    br();
+ 
+    return 0;
+}
+ 
+void br(void)
+{
+    printf("Brazil, Russia");
+}
+ 
+void ic(void)
+{
+    printf("India, China");
+}
+</code></pre>
+
+<p>06. toes라는 정수형 변수를 사용하는 프로그램을 작성하라. 프로그램은 toes를 10으로 설정한다. 또한 toes의 2배는 얼마이고, toes의 제곱은 얼마인지 계산한다. 그러고 나서 세 값을 구분하여 출력한다.</p>
+<pre><code class="C">#include &lt;stdio.h&gt;
+int main(void)
+{
+    int toes = 10;
+    int two_toes = toes * 2;
+    int squared_toes = toes * toes;
+ 
+    printf("toes = %d, two toes = %d, toes squared = %d\n",
+            toes, two_toes, squared_toes);
+ 
+    return 0;
+}
+</code></pre>
+
+<p>07. “웃는 얼굴에 침 못 뱉는다”는 속담이 있다. 다음과 같은 출력이 나오는 프로그램을 작성하라.</p>
+<pre><code class="C">Smile!Smile!Smile!
+Smile!Smile!
+Smile!
+</code></pre>
+<p>Smile!을 한 번만 출력하는 함수를 정의하고, 필요할 때마다 그 함수를 호출하여 사용해야 한다.</p>
+<pre><code class="C">#include &lt;stdio.h&gt;
+void smile(void);
+int main(void)
+{
+    smile();
+    smile();
+    smile();
+    printf("\n");
+ 
+    smile();
+    smile();
+    printf("\n");
+ 
+    smile();
+    printf("\n");
+ 
+    return 0;
+}
+ 
+void smile(void)
+{
+    printf("Smile!");
+}
+</code></pre>
+
+<p>08. C에서는 한 함수가 다른 함수를 호출할 수 있다. one_three()라는 이름의 함수를 호출하는 프로그램을 작성하라. 이 함수는 먼저 단어 one을 한 라인에 출력하고, 이어서 함수 two()를 호출하고, 마지막으로 단어 three를 한 라인에 출력한다. 함수 two()는 단어 two를 한 라인에 출력한다. main() 함수는 함수 one_three()를 호출하기 전에 starting now:를 출력하고, one_three()를 호출한 후에 done!을 출력한다. 프로그램의 출력이 다음과 같아야 한다.</p>
+<pre><code class="C">starting now:
+one
+two
+three
+done!
+</code></pre>
+<pre><code class="C">#include &lt;stdio.h&gt;
+void one_three(void);
+void two(void);
+int main(void)
+{
+    printf("starting now:\n");
+    one_three();
+    printf("done!\n");
+ 
+    return 0;
+}
+ 
+void one_three(void)
+{
+    printf("one\n");
+    two();
+    printf("three\n");
+}
+void two(void)
+{
+    printf("two\n");
+}
+</code></pre>
+
 
 </div>
 </div>
